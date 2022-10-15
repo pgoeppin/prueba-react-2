@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PizzaProvider from './context/PizzaContext';
+import Header from './components/Header';
+import Home from './views/Home';
+import Cart from './views/Cart';
+import PizzaDetalle from './views/PizzaDetalle';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <PizzaProvider>
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+          <Route
+            path="/"
+            element={
+                <Home />
+            }
+          />
+          <Route
+          path="/pizza/:pizzaId"
+          element={
+            <PizzaDetalle />
+          }
+          />
+          <Route
+          path="/cart"
+          element={
+            <Cart/>
+          }
+          />
+        </Routes>
+    </BrowserRouter>
+    </PizzaProvider>
+    </>
   );
 }
 

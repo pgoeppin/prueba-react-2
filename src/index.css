@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.active {
+  text-decoration: none;
+  color: white;
+}
+.unactive {
+  text-decoration: none;
+  color: white;
+}
+.ingredientes {
+  list-style: none;
+}
+.cart {
+  background-color: #fafafab2;
+}
+.img-holder{
+  width: 4em;
+}
+.products {
+  background-color: white;
+}
+
